@@ -6,11 +6,168 @@
 
 html,
 body {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
 }
 
 main {
-    height: 100%;
     width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#container {
+    width: 100%;
+    min-height: calc(100vh - 40px);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+#leftSection {
+    flex: 1;
+    background-color: #FBC50B;
+    padding: 50px;
+}
+
+#leftSection img {
+    width: 18%;
+    height: auto;
+}
+
+#leftSection .text {
+    margin-top: 100px;
+}
+
+#leftSection .text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#leftSection .text h1 {
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+#leftSection .text #paragraph {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    max-width: 600px;
+}
+
+#rightSection {
+    width: 40%;
+    background-color: #FBE8B5;
+}
+
+#img {
+    position: absolute;
+    top: 50%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#img img {
+    width: clamp(350px, 40vw, 750px);
+    height: auto;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+
+    #rightSection {
+        width: 35%;
+    }
+
+    #img img {
+        width: 600px;
+    }
+
+    #leftSection .text h1 {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #img img {
+        width: 500px;
+    }
+
+    #leftSection .text h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #container {
+        flex-direction: column;
+    }
+
+    #leftSection {
+        width: 100%;
+        height: 65vh;
+        padding: 30px;
+    }
+
+    #rightSection {
+        width: 100%;
+        height: 35vh;
+    }
+
+    #leftSection img {
+        width: 100px;
+    }
+
+    #leftSection .text {
+        margin-top: 50px;
+    }
+
+    #leftSection .text h1 {
+        font-size: 4rem;
+    }
+
+    #leftSection .text #paragraph {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.7rem;
+    }
+
+    #img {
+        top: 72%;
+        left: 50%;
+    }
+
+    #img img {
+        width: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #leftSection .text h1 {
+        font-size: 3rem;
+    }
+
+    #img img {
+        width: 300px;
+    }
+
+    #leftSection .text h3 {
+        font-size: 1rem;
+    }
+
+    #leftSection .text #paragraph {
+        font-size: 0.95rem;
+    }
 }
